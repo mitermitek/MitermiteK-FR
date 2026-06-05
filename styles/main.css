@@ -1,133 +1,97 @@
 @import './reset.css';
 @import './remixicon.css';
 
-/* Style minimaliste blanc avec texte noir utilisant des classes */
-:root {
-    --background-color: #ffffff;
-    --text-color: #000000;
-    --text-secondary-color: #666666;
-    --max-width: 800px;
-    --spacing-unit: 1.5rem;
-    --font-size-base: 1rem;
-    --line-height-base: 1.6;
-}
-
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    padding: 0;
-    margin: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    font:
+        16px/1.6 -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
 }
 
 main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--spacing-unit);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    width: 100%;
+    width: min(100%, 600px);
+    margin: auto;
+    padding: 1.5rem;
 }
 
-.profile-section {
+header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
 }
 
-.title-with-memoji {
-    display: flex;
-    align-items: end;
-    gap: var(--spacing-unit);
-    margin-bottom: calc(var(--spacing-unit) * 0.5);
+nav {
+    margin-top: 1.5rem;
+
+    ul {
+        display: flex;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
 }
 
-.memoji {
+img {
     width: 80px;
     height: 80px;
+    flex-shrink: 0;
 }
 
-.site-title {
-    font-size: 2.5rem;
-    font-weight: 600;
+h1 {
+    margin: 0;
+    font-size: 2rem;
     line-height: 1.2;
-    color: var(--text-color);
+    font-weight: 700;
+}
+
+p,
+small {
     margin: 0;
 }
 
-.tagline {
-    font-size: 1.1rem;
-    max-width: 500px;
-    color: var(--text-color);
+small {
+    color: #666;
+    font-size: 0.875rem;
 }
 
-.location {
-    font-size: 0.9rem;
-    color: var(--text-secondary-color);
-    font-weight: 400;
-}
-
-.social-section {
-    margin-top: var(--spacing-unit);
-}
-
-.social-links {
-    list-style: none;
-    display: flex;
-    gap: var(--spacing-unit);
-}
-
-.social-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1rem;
+a {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.2s ease;
-}
+    gap: 0.25rem;
 
-.social-link:hover {
-    opacity: 0.7;
-}
+    color: inherit;
+    text-decoration: none;
 
-.social-link i {
-    font-size: 1.2rem;
+    &:hover,
+    &:focus {
+        opacity: 0.75;
+    }
 }
 
 @media (max-width: 600px) {
-    .title-with-memoji {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .memoji {
-        margin-bottom: calc(var(--spacing-unit) * 0.5);
-    }
-
-    .site-title {
-        font-size: 2rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .location {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-
     main {
-        padding: calc(var(--spacing-unit) * 0.75);
+        padding: 1rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
     }
 }
