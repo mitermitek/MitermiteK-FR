@@ -36,12 +36,30 @@ main {
     width: 100%;
 }
 
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title-with-memoji {
+    display: flex;
+    align-items: end;
+    gap: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.memoji {
+    width: 80px;
+    height: 80px;
+}
+
 .site-title {
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 1.2;
     color: var(--text-color);
-    margin-bottom: var(--spacing-unit);
+    margin: 0;
 }
 
 .tagline {
@@ -85,16 +103,28 @@ main {
 }
 
 @media (max-width: 600px) {
+    .title-with-memoji {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .memoji {
+        margin-bottom: calc(var(--spacing-unit) * 0.5);
+    }
+
     .site-title {
         font-size: 2rem;
     }
 
     .tagline {
         font-size: 1rem;
+        text-align: center;
     }
 
     .location {
         font-size: 0.8rem;
+        text-align: center;
     }
 
     main {
